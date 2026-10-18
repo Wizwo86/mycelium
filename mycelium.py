@@ -18,7 +18,7 @@ import urllib.request
 from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 UPDATE_REPO = "Wizwo86/mycelium-releases"  # public repo whose GitHub releases hold the builds
 PORT = 8765
 DISCOVERY_PORT = 8766
