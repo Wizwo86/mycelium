@@ -1,7 +1,7 @@
-"""Network Share: pick folders to share on your LAN, see which PCs running this app are online,
+"""Mycelium: pick folders to share on your LAN, see which PCs running this app are online,
 browse their shared folders and download files or whole folders.
 
-Run: py share.py
+Run: py mycelium.py
 """
 import http.server
 import json
@@ -48,7 +48,7 @@ def check_update():
         release = json.load(r)
     if parse_version(release["tag_name"]) <= parse_version(VERSION):
         return None
-    want = ("NetworkShare.exe" if os.name == "nt" else "NetworkShare") if FROZEN else "share.py"
+    want = ("Mycelium.exe" if os.name == "nt" else "Mycelium") if FROZEN else "mycelium.py"
     for asset in release["assets"]:
         if asset["name"] == want:
             return release["tag_name"], asset["browser_download_url"], int(asset["size"])
@@ -298,7 +298,7 @@ def human_size(n):
 class App:
     def __init__(self, root):
         self.root = root
-        root.title(f"Network Share {VERSION} — {NAME}")
+        root.title(f"Mycelium {VERSION} — {NAME}")
         self.declined = None  # update version the user said no to, so we don't nag
         root.geometry("900x520")
         self.peer = None  # name of the computer being browsed
@@ -557,7 +557,7 @@ def main():
         except OSError:
             if attempt == 9:
                 root.withdraw()
-                messagebox.showerror("Network Share", f"Port {PORT} is in use. Is Network Share already running?")
+                messagebox.showerror("Mycelium", f"Port {PORT} is in use. Is Mycelium already running?")
                 return
             time.sleep(0.5)
     for target in (server.serve_forever, announce, listen):

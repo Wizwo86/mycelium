@@ -21,12 +21,12 @@ Run Mycelium on each PC and they find each other automatically. Pick the folders
 
 ## Get started
 
-**Windows:** download `NetworkShare.exe` from the [latest release](https://github.com/Wizwo86/mycelium-releases/releases/latest) and run it. When Windows Firewall asks, allow it on **Private** networks.
+**Windows:** download `Mycelium.exe` from the [latest release](https://github.com/Wizwo86/mycelium-releases/releases/latest) and run it. When Windows Firewall asks, allow it on **Private** networks.
 
 **Linux:**
 ```bash
 sudo apt install python3-tk
-python3 share.py
+python3 mycelium.py
 ```
 If a firewall is on, open ports **8765/tcp** and **8766/udp**.
 
@@ -41,9 +41,9 @@ Each copy announces itself every few seconds with a small UDP broadcast on your 
 
 | | |
 |---|---|
-| Run from source | `py share.py` |
-| Run tests | `py test_share.py` |
-| Publish a release | bump `VERSION` in `share.py`, then `.\release.ps1` |
+| Run from source | `py mycelium.py` |
+| Run tests | `py test_mycelium.py` |
+| Publish a release | bump `VERSION` in `mycelium.py`, then `.\release.ps1` |
 
 Releases go to the public [mycelium-releases](https://github.com/Wizwo86/mycelium-releases) repo, which running copies check for updates. The updater stays off when running from this git checkout, so it never overwrites your working copy.
 
