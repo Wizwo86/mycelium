@@ -17,6 +17,6 @@ Copy-Item mycelium.py dist\share.py
 
 git add -u  # tracked files only, so stray local files never get published
 git commit -m "Release v$version"
-git tag "v$version"
+git tag -a "v$version" -m "v$version"  # annotated, so --follow-tags pushes it
 git push --follow-tags
 & $gh release create "v$version" dist\Mycelium.exe mycelium.py dist\NetworkShare.exe dist\share.py --repo $repo --title "v$version" --notes "Mycelium $version"
