@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🍄 Mycelium
+# Mycelium
 
 **Share folders between the computers on your home network: no setup, no accounts, no cloud.**
 
